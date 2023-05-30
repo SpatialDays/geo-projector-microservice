@@ -75,5 +75,16 @@ def transform():
     return jsonify(response)
 
 
+@app.route("/status", methods=["GET"])
+def status():
+    """
+    Endpoint for checking the liveness of the application.
+
+    Returns:
+    - A simple JSON object indicating that the application is running.
+    """
+    return jsonify({"status": "The application is running."})
+
+
 if __name__ == "__main__":
     app.run(debug=True)
