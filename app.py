@@ -30,7 +30,7 @@ def transform():
     - JSON object with:
         'incoming_epsg': EPSG code of the input spatial reference system,
         'outgoing_epsg': EPSG code of the transformed data,
-        'coordinates': GeoJSON representation of the transformed polygon.
+        'geometry': GeoJSON representation of the transformed polygon.
 
     Raises:
     - ValueError: if the required form parameters are missing or invalid.
@@ -69,9 +69,9 @@ def transform():
 
     # Construct and return the JSON response
     response = {
-        "incoming_epsg": input_epsg,
-        "outgoing_epsg": output_epsg,
-        "coordinates": transformed_geo_df.geometry.to_json(),
+        "incoming_epsg": int(input_epsg),
+        "outgoing_epsg": int(output_epsg),
+        "geometry": transformed_geo_df.geometry.to_json(),
     }
 
     return jsonify(response)
