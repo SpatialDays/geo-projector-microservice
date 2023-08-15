@@ -6,6 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 
+@app.route("/transform/", methods=["POST"])
 @app.route("/transform", methods=["POST"])
 def transform():
     """
