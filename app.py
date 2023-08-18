@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/transform", methods=["POST"])
+@app.route("/", methods=["POST"])
 def transform():
     """
     Endpoint for transforming geographic data from an input spatial reference
